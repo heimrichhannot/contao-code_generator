@@ -1,0 +1,33 @@
+{
+    "name": "heimrichhannot/contao-code_generator",
+    "description":"This module offers comfortable code generation based on separated configurations for Contao.",
+    "keywords":["contao", "code", "generator", "generation", "module", "developer"],
+    "type": "contao-module",
+    "homepage":"https://github.com/heimrichhannot/contao-code_generator",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"Heimrich & Hannot",
+            "email":"digitales@heimrich-hannot.de",
+            "homepage":"http://www.heimrich-hannot.de",
+            "role":"Developer"
+        }
+    ],
+    "support":{
+        "issues":"https://github.com/heimrichhannot/contao-code_generator/issues"
+    },
+    "require": {
+        "contao/core": ">=3.2,<4-dev",
+		"heimrichhannot/contao-haste_plus": ">=1.3.46"
+    },
+    "autoload": {
+        "classmap": [""]
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "": "system/modules/code_generator"
+            }
+        }
+    }
+}
