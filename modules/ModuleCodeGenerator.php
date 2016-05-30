@@ -24,7 +24,12 @@ class ModuleCodeGenerator
 
 				if ($objConfig->preventDoubleCodes)
 				{
-					$blnFound = static::findCodeInTable($strCode, $objConfig->doubleCodeTable, $objConfig->doubleCodeTableField);
+					$blnFound = false;
+
+					if ($objConfig->doubleCodeTable && $objConfig->doubleCodeTableField)
+					{
+						$blnFound = static::findCodeInTable($strCode, $objConfig->doubleCodeTable, $objConfig->doubleCodeTableField);
+					}
 
 					while (in_array($strCode, $arrCodes) || $blnFound)
 					{
@@ -42,8 +47,6 @@ class ModuleCodeGenerator
 
 				$arrCodes[] = $strCode;
 			}
-
-			return implode("\n", $arrCodes);
 
 			Files::sendTextAsFileToBrowser(implode("\n", $arrCodes), 'codes_' . date('Y-m-d-H-i') . '.txt');
 		}
